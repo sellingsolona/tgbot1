@@ -1,0 +1,5 @@
+python-telegram-bot
+cryptography
+requests
+sqlite3
+python-dotenv
