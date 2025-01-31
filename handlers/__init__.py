@@ -6,6 +6,7 @@ from .token_creation import create_token_command, process_token_details
 from .general import homepage_command, confirm_action
 
 def register_handlers(app):
+    """Registers all bot command and callback handlers."""
     app.add_handler(CommandHandler('start', homepage_command))
     app.add_handler(CommandHandler('bundler', bundler_command))
     app.add_handler(CommandHandler('multi_snipe', multi_snipe_command))
