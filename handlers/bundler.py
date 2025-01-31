@@ -4,6 +4,7 @@ from telegram.ext import CallbackContext
 import logging
 
 async def bundler_command(update: Update, context: CallbackContext):
+    """Displays the Bundler menu with options."""
     logging.info("User accessed bundler menu.")
     keyboard = [
         [InlineKeyboardButton("Generate Wallets", callback_data="generate_wallets")],
