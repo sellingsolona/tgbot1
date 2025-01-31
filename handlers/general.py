@@ -3,8 +3,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 import logging
 from utils.confirmation import generate_confirmation_buttons
+import requests
 
 async def homepage_command(update: Update, context: CallbackContext):
+    """Displays the main menu with options."""
     logging.info("User accessed homepage menu.")
     keyboard = [
         [InlineKeyboardButton("Bundler", callback_data="bundler")],
@@ -15,6 +17,7 @@ async def homepage_command(update: Update, context: CallbackContext):
     await update.message.reply_text("Select an option:", reply_markup=reply_markup)
 
 async def confirm_action(update: Update, context: CallbackContext):
+    """Handles confirmation actions for various commands."""
     query = update.callback_query
     action = query.data.split('_')[1]
     logging.info(f"User confirmed action: {action}")
