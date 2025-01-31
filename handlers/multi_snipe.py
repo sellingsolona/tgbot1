@@ -4,6 +4,7 @@ from telegram.ext import CallbackContext
 import logging
 
 async def multi_snipe_command(update: Update, context: CallbackContext):
+    """Displays the Multi-Snipe menu with options."""
     logging.info("User accessed multi snipe menu.")
     keyboard = [
         [InlineKeyboardButton("Generate Wallets", callback_data="generate_wallets")],
